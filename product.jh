@@ -1,15 +1,50 @@
-entity Product {
-	productName String,
-    productType String
-    price Float
+entity IDBTrackDetails { 
+   	companyCode String, 
+	assignmentId Integer, 
+	trackId Integer, 
+	numberOfDays Integer, 
+	employeeId String, 
+	employeeName String, 
+	levelId Integer, 
+	listed String, 
+	withdrawalOption String, 
+	assigneLtRating String, 
+	assigneStRating String, 
+	assignedOutlook String, 
+	assignedOtherRating String, 
+	totalNumberofDays Integer, 
+	companyClassification String, 
+	reason String, 
+	comments String, 
+	targetDate Instant, 
+	createdOn Instant, 
+	executingDepartment String, 
+	companyName String
 }
 
-// Set pagination options
-paginate Product with pagination
+entity IDBCompanyDetails { 
+    companyCode String,
+    companyName String,
+    meetingNumber String,    
+    meetingDate Instant,
+    prDate Instant,
+    crrDate Instant,
+    osLtRating String,
+    osStRating String,
+    osOutlook String,    
+    osOtherRating String,
+    assignedLtRating String,    
+    assignedStRating String,    
+    assignedOutlook String,
+    assignedOtherRating String,  
+    companyClassification String,
+    osLtRtgCategory String,    
+    osStRtgCategory String,    
+    executingDepartment String,    
+    createdOn Instant
+}
 
 dto * with mapstruct
 
 // Set service options to all except few
 service all with serviceImpl
-// Set an angular suffix
-angularSuffix * with mySuffix
