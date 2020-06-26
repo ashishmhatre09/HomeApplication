@@ -1,0 +1,109 @@
+{
+  "name": "IDBTrackDetails",
+  "fields": [
+    {
+      "fieldName": "companyCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "assignmentId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "trackId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "numberOfDays",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "employeeId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "employeeName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "levelId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "listed",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "withdrawalOption",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "assigneLtRating",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "assigneStRating",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "assignedOutlook",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "assignedOtherRating",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "totalNumberofDays",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "companyClassification",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "reason",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "comments",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "targetDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "executingDepartment",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "companyName",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "iDBCompanyDetails",
+      "otherEntityRelationshipName": "companyCode",
+      "relationshipName": "companyCode",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200626110738",
+  "entityTableName": "idb_track_details",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

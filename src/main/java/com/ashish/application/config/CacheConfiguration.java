@@ -39,6 +39,9 @@ public class CacheConfiguration {
             cm.createCache(com.ashish.application.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.ashish.application.domain.User.class.getName() + ".authorities", jcacheConfiguration);
             cm.createCache(com.ashish.application.domain.Product.class.getName(), jcacheConfiguration);
+            createCache(cm, com.ashish.application.domain.IDBTrackDetails.class.getName());
+            createCache(cm, com.ashish.application.domain.IDBCompanyDetails.class.getName());
+            createCache(cm, com.ashish.application.domain.IDBCompanyDetails.class.getName() + ".companyCodes");
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,0 +1,107 @@
+<div>
+    <h2 id="page-heading">
+        <span>IDB Track Details</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-idb-track-details" [routerLink]="['/idb-track-details/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new IDB Track Details
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="iDBTrackDetails?.length === 0">
+        <span>No iDBTrackDetails found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="iDBTrackDetails && iDBTrackDetails.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span>ID</span></th>
+                    <th scope="col" ><span>Company Code</span></th>
+                    <th scope="col" ><span>Assignment Id</span></th>
+                    <th scope="col" ><span>Track Id</span></th>
+                    <th scope="col" ><span>Number Of Days</span></th>
+                    <th scope="col" ><span>Employee Id</span></th>
+                    <th scope="col" ><span>Employee Name</span></th>
+                    <th scope="col" ><span>Level Id</span></th>
+                    <th scope="col" ><span>Listed</span></th>
+                    <th scope="col" ><span>Withdrawal Option</span></th>
+                    <th scope="col" ><span>Assigne Lt Rating</span></th>
+                    <th scope="col" ><span>Assigne St Rating</span></th>
+                    <th scope="col" ><span>Assigned Outlook</span></th>
+                    <th scope="col" ><span>Assigned Other Rating</span></th>
+                    <th scope="col" ><span>Total Numberof Days</span></th>
+                    <th scope="col" ><span>Company Classification</span></th>
+                    <th scope="col" ><span>Reason</span></th>
+                    <th scope="col" ><span>Comments</span></th>
+                    <th scope="col" ><span>Target Date</span></th>
+                    <th scope="col" ><span>Created On</span></th>
+                    <th scope="col" ><span>Executing Department</span></th>
+                    <th scope="col" ><span>Company Name</span></th>
+                    <th scope="col" ><span>Company Code</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let iDBTrackDetails of iDBTrackDetails ;trackBy: trackId">
+                    <td><a [routerLink]="['/idb-track-details', iDBTrackDetails.id, 'view']">{{ iDBTrackDetails.id }}</a></td>
+                    <td>{{ iDBTrackDetails.companyCode }}</td>
+                    <td>{{ iDBTrackDetails.assignmentId }}</td>
+                    <td>{{ iDBTrackDetails.trackId }}</td>
+                    <td>{{ iDBTrackDetails.numberOfDays }}</td>
+                    <td>{{ iDBTrackDetails.employeeId }}</td>
+                    <td>{{ iDBTrackDetails.employeeName }}</td>
+                    <td>{{ iDBTrackDetails.levelId }}</td>
+                    <td>{{ iDBTrackDetails.listed }}</td>
+                    <td>{{ iDBTrackDetails.withdrawalOption }}</td>
+                    <td>{{ iDBTrackDetails.assigneLtRating }}</td>
+                    <td>{{ iDBTrackDetails.assigneStRating }}</td>
+                    <td>{{ iDBTrackDetails.assignedOutlook }}</td>
+                    <td>{{ iDBTrackDetails.assignedOtherRating }}</td>
+                    <td>{{ iDBTrackDetails.totalNumberofDays }}</td>
+                    <td>{{ iDBTrackDetails.companyClassification }}</td>
+                    <td>{{ iDBTrackDetails.reason }}</td>
+                    <td>{{ iDBTrackDetails.comments }}</td>
+                    <td>{{ iDBTrackDetails.targetDate | date:'medium' }}</td>
+                    <td>{{ iDBTrackDetails.createdOn | date:'medium' }}</td>
+                    <td>{{ iDBTrackDetails.executingDepartment }}</td>
+                    <td>{{ iDBTrackDetails.companyName }}</td>
+                    <td>
+                        <div *ngIf="iDBTrackDetails.companyCode">
+                            <a [routerLink]="['/idb-company-details', iDBTrackDetails.companyCode?.id, 'view']" >{{ iDBTrackDetails.companyCode?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/idb-track-details', iDBTrackDetails.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/idb-track-details', iDBTrackDetails.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(iDBTrackDetails)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

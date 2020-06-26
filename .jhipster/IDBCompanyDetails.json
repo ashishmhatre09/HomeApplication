@@ -1,0 +1,100 @@
+{
+  "name": "IDBCompanyDetails",
+  "fields": [
+    {
+      "fieldName": "companyCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "companyName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "meetingNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "meetingDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "prDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "crrDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "osLtRating",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "osStRating",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "osOutlook",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "osOtherRating",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "assignedLtRating",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "assignedStRating",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "assignedOutlook",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "assignedOtherRating",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "companyClassification",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "osLtRtgCategory",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "osStRtgCategory",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "executingDepartment",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "iDBTrackDetails",
+      "otherEntityRelationshipName": "companyCode",
+      "relationshipName": "companyCode"
+    }
+  ],
+  "changelogDate": "20200626110838",
+  "entityTableName": "idb_company_details",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

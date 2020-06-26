@@ -1,0 +1,97 @@
+<div>
+    <h2 id="page-heading">
+        <span>IDB Company Details</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-idb-company-details" [routerLink]="['/idb-company-details/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new IDB Company Details
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="iDBCompanyDetails?.length === 0">
+        <span>No iDBCompanyDetails found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="iDBCompanyDetails && iDBCompanyDetails.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span>ID</span></th>
+                    <th scope="col" ><span>Company Code</span></th>
+                    <th scope="col" ><span>Company Name</span></th>
+                    <th scope="col" ><span>Meeting Number</span></th>
+                    <th scope="col" ><span>Meeting Date</span></th>
+                    <th scope="col" ><span>Pr Date</span></th>
+                    <th scope="col" ><span>Crr Date</span></th>
+                    <th scope="col" ><span>Os Lt Rating</span></th>
+                    <th scope="col" ><span>Os St Rating</span></th>
+                    <th scope="col" ><span>Os Outlook</span></th>
+                    <th scope="col" ><span>Os Other Rating</span></th>
+                    <th scope="col" ><span>Assigned Lt Rating</span></th>
+                    <th scope="col" ><span>Assigned St Rating</span></th>
+                    <th scope="col" ><span>Assigned Outlook</span></th>
+                    <th scope="col" ><span>Assigned Other Rating</span></th>
+                    <th scope="col" ><span>Company Classification</span></th>
+                    <th scope="col" ><span>Os Lt Rtg Category</span></th>
+                    <th scope="col" ><span>Os St Rtg Category</span></th>
+                    <th scope="col" ><span>Executing Department</span></th>
+                    <th scope="col" ><span>Created On</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let iDBCompanyDetails of iDBCompanyDetails ;trackBy: trackId">
+                    <td><a [routerLink]="['/idb-company-details', iDBCompanyDetails.id, 'view']">{{ iDBCompanyDetails.id }}</a></td>
+                    <td>{{ iDBCompanyDetails.companyCode }}</td>
+                    <td>{{ iDBCompanyDetails.companyName }}</td>
+                    <td>{{ iDBCompanyDetails.meetingNumber }}</td>
+                    <td>{{ iDBCompanyDetails.meetingDate | date:'medium' }}</td>
+                    <td>{{ iDBCompanyDetails.prDate | date:'medium' }}</td>
+                    <td>{{ iDBCompanyDetails.crrDate | date:'medium' }}</td>
+                    <td>{{ iDBCompanyDetails.osLtRating }}</td>
+                    <td>{{ iDBCompanyDetails.osStRating }}</td>
+                    <td>{{ iDBCompanyDetails.osOutlook }}</td>
+                    <td>{{ iDBCompanyDetails.osOtherRating }}</td>
+                    <td>{{ iDBCompanyDetails.assignedLtRating }}</td>
+                    <td>{{ iDBCompanyDetails.assignedStRating }}</td>
+                    <td>{{ iDBCompanyDetails.assignedOutlook }}</td>
+                    <td>{{ iDBCompanyDetails.assignedOtherRating }}</td>
+                    <td>{{ iDBCompanyDetails.companyClassification }}</td>
+                    <td>{{ iDBCompanyDetails.osLtRtgCategory }}</td>
+                    <td>{{ iDBCompanyDetails.osStRtgCategory }}</td>
+                    <td>{{ iDBCompanyDetails.executingDepartment }}</td>
+                    <td>{{ iDBCompanyDetails.createdOn | date:'medium' }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/idb-company-details', iDBCompanyDetails.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/idb-company-details', iDBCompanyDetails.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(iDBCompanyDetails)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
