@@ -1,0 +1,102 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="iDBCompanyDetails">
+            <h2><span>IDB Company Details</span> {{ iDBCompanyDetails.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Company Code</span></dt>
+                <dd>
+                    <span>{{ iDBCompanyDetails.companyCode }}</span>
+                </dd>
+                <dt><span>Company Name</span></dt>
+                <dd>
+                    <span>{{ iDBCompanyDetails.companyName }}</span>
+                </dd>
+                <dt><span>Meeting Number</span></dt>
+                <dd>
+                    <span>{{ iDBCompanyDetails.meetingNumber }}</span>
+                </dd>
+                <dt><span>Meeting Date</span></dt>
+                <dd>
+                    <span>{{ iDBCompanyDetails.meetingDate }}</span>
+                </dd>
+                <dt><span>Pr Date</span></dt>
+                <dd>
+                    <span>{{ iDBCompanyDetails.prDate }}</span>
+                </dd>
+                <dt><span>Crr Date</span></dt>
+                <dd>
+                    <span>{{ iDBCompanyDetails.crrDate }}</span>
+                </dd>
+                <dt><span>Os Lt Rating</span></dt>
+                <dd>
+                    <span>{{ iDBCompanyDetails.osLtRating }}</span>
+                </dd>
+                <dt><span>Os St Rating</span></dt>
+                <dd>
+                    <span>{{ iDBCompanyDetails.osStRating }}</span>
+                </dd>
+                <dt><span>Os Outlook</span></dt>
+                <dd>
+                    <span>{{ iDBCompanyDetails.osOutlook }}</span>
+                </dd>
+                <dt><span>Os Other Rating</span></dt>
+                <dd>
+                    <span>{{ iDBCompanyDetails.osOtherRating }}</span>
+                </dd>
+                <dt><span>Assigned Lt Rating</span></dt>
+                <dd>
+                    <span>{{ iDBCompanyDetails.assignedLtRating }}</span>
+                </dd>
+                <dt><span>Assigned St Rating</span></dt>
+                <dd>
+                    <span>{{ iDBCompanyDetails.assignedStRating }}</span>
+                </dd>
+                <dt><span>Assigned Outlook</span></dt>
+                <dd>
+                    <span>{{ iDBCompanyDetails.assignedOutlook }}</span>
+                </dd>
+                <dt><span>Assigned Other Rating</span></dt>
+                <dd>
+                    <span>{{ iDBCompanyDetails.assignedOtherRating }}</span>
+                </dd>
+                <dt><span>Company Classification</span></dt>
+                <dd>
+                    <span>{{ iDBCompanyDetails.companyClassification }}</span>
+                </dd>
+                <dt><span>Os Lt Rtg Category</span></dt>
+                <dd>
+                    <span>{{ iDBCompanyDetails.osLtRtgCategory }}</span>
+                </dd>
+                <dt><span>Os St Rtg Category</span></dt>
+                <dd>
+                    <span>{{ iDBCompanyDetails.osStRtgCategory }}</span>
+                </dd>
+                <dt><span>Executing Department</span></dt>
+                <dd>
+                    <span>{{ iDBCompanyDetails.executingDepartment }}</span>
+                </dd>
+                <dt><span>Created On</span></dt>
+                <dd>
+                    <span>{{ iDBCompanyDetails.createdOn }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/idb-company-details', iDBCompanyDetails.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
