@@ -1,0 +1,116 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="iDBTrackDetails">
+            <h2><span>IDB Track Details</span> {{ iDBTrackDetails.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Company Code</span></dt>
+                <dd>
+                    <span>{{ iDBTrackDetails.companyCode }}</span>
+                </dd>
+                <dt><span>Assignment Id</span></dt>
+                <dd>
+                    <span>{{ iDBTrackDetails.assignmentId }}</span>
+                </dd>
+                <dt><span>Track Id</span></dt>
+                <dd>
+                    <span>{{ iDBTrackDetails.trackId }}</span>
+                </dd>
+                <dt><span>Number Of Days</span></dt>
+                <dd>
+                    <span>{{ iDBTrackDetails.numberOfDays }}</span>
+                </dd>
+                <dt><span>Employee Id</span></dt>
+                <dd>
+                    <span>{{ iDBTrackDetails.employeeId }}</span>
+                </dd>
+                <dt><span>Employee Name</span></dt>
+                <dd>
+                    <span>{{ iDBTrackDetails.employeeName }}</span>
+                </dd>
+                <dt><span>Level Id</span></dt>
+                <dd>
+                    <span>{{ iDBTrackDetails.levelId }}</span>
+                </dd>
+                <dt><span>Listed</span></dt>
+                <dd>
+                    <span>{{ iDBTrackDetails.listed }}</span>
+                </dd>
+                <dt><span>Withdrawal Option</span></dt>
+                <dd>
+                    <span>{{ iDBTrackDetails.withdrawalOption }}</span>
+                </dd>
+                <dt><span>Assigne Lt Rating</span></dt>
+                <dd>
+                    <span>{{ iDBTrackDetails.assigneLtRating }}</span>
+                </dd>
+                <dt><span>Assigne St Rating</span></dt>
+                <dd>
+                    <span>{{ iDBTrackDetails.assigneStRating }}</span>
+                </dd>
+                <dt><span>Assigned Outlook</span></dt>
+                <dd>
+                    <span>{{ iDBTrackDetails.assignedOutlook }}</span>
+                </dd>
+                <dt><span>Assigned Other Rating</span></dt>
+                <dd>
+                    <span>{{ iDBTrackDetails.assignedOtherRating }}</span>
+                </dd>
+                <dt><span>Total Numberof Days</span></dt>
+                <dd>
+                    <span>{{ iDBTrackDetails.totalNumberofDays }}</span>
+                </dd>
+                <dt><span>Company Classification</span></dt>
+                <dd>
+                    <span>{{ iDBTrackDetails.companyClassification }}</span>
+                </dd>
+                <dt><span>Reason</span></dt>
+                <dd>
+                    <span>{{ iDBTrackDetails.reason }}</span>
+                </dd>
+                <dt><span>Comments</span></dt>
+                <dd>
+                    <span>{{ iDBTrackDetails.comments }}</span>
+                </dd>
+                <dt><span>Target Date</span></dt>
+                <dd>
+                    <span>{{ iDBTrackDetails.targetDate }}</span>
+                </dd>
+                <dt><span>Created On</span></dt>
+                <dd>
+                    <span>{{ iDBTrackDetails.createdOn }}</span>
+                </dd>
+                <dt><span>Executing Department</span></dt>
+                <dd>
+                    <span>{{ iDBTrackDetails.executingDepartment }}</span>
+                </dd>
+                <dt><span>Company Name</span></dt>
+                <dd>
+                    <span>{{ iDBTrackDetails.companyName }}</span>
+                </dd>
+                <dt><span>Company Code</span></dt>
+                <dd>
+                    <div *ngIf="iDBTrackDetails.companyCode">
+                        <a [routerLink]="['/idb-company-details', iDBTrackDetails.companyCode?.id, 'view']">{{ iDBTrackDetails.companyCode?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/idb-track-details', iDBTrackDetails.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
