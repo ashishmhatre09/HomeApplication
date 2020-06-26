@@ -1,0 +1,144 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-idb-company-details-heading">Create or edit a IDB Company Details</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_companyCode">Company Code</label>
+                    <input type="text" class="form-control" name="companyCode" id="field_companyCode"
+                           formControlName="companyCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_companyName">Company Name</label>
+                    <input type="text" class="form-control" name="companyName" id="field_companyName"
+                           formControlName="companyName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_meetingNumber">Meeting Number</label>
+                    <input type="text" class="form-control" name="meetingNumber" id="field_meetingNumber"
+                           formControlName="meetingNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_meetingDate">Meeting Date</label>
+                    <div class="d-flex">
+                        <input id="field_meetingDate" type="datetime-local" class="form-control" name="meetingDate" formControlName="meetingDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_prDate">Pr Date</label>
+                    <div class="d-flex">
+                        <input id="field_prDate" type="datetime-local" class="form-control" name="prDate" formControlName="prDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_crrDate">Crr Date</label>
+                    <div class="d-flex">
+                        <input id="field_crrDate" type="datetime-local" class="form-control" name="crrDate" formControlName="crrDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_osLtRating">Os Lt Rating</label>
+                    <input type="text" class="form-control" name="osLtRating" id="field_osLtRating"
+                           formControlName="osLtRating"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_osStRating">Os St Rating</label>
+                    <input type="text" class="form-control" name="osStRating" id="field_osStRating"
+                           formControlName="osStRating"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_osOutlook">Os Outlook</label>
+                    <input type="text" class="form-control" name="osOutlook" id="field_osOutlook"
+                           formControlName="osOutlook"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_osOtherRating">Os Other Rating</label>
+                    <input type="text" class="form-control" name="osOtherRating" id="field_osOtherRating"
+                           formControlName="osOtherRating"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_assignedLtRating">Assigned Lt Rating</label>
+                    <input type="text" class="form-control" name="assignedLtRating" id="field_assignedLtRating"
+                           formControlName="assignedLtRating"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_assignedStRating">Assigned St Rating</label>
+                    <input type="text" class="form-control" name="assignedStRating" id="field_assignedStRating"
+                           formControlName="assignedStRating"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_assignedOutlook">Assigned Outlook</label>
+                    <input type="text" class="form-control" name="assignedOutlook" id="field_assignedOutlook"
+                           formControlName="assignedOutlook"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_assignedOtherRating">Assigned Other Rating</label>
+                    <input type="text" class="form-control" name="assignedOtherRating" id="field_assignedOtherRating"
+                           formControlName="assignedOtherRating"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_companyClassification">Company Classification</label>
+                    <input type="text" class="form-control" name="companyClassification" id="field_companyClassification"
+                           formControlName="companyClassification"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_osLtRtgCategory">Os Lt Rtg Category</label>
+                    <input type="text" class="form-control" name="osLtRtgCategory" id="field_osLtRtgCategory"
+                           formControlName="osLtRtgCategory"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_osStRtgCategory">Os St Rtg Category</label>
+                    <input type="text" class="form-control" name="osStRtgCategory" id="field_osStRtgCategory"
+                           formControlName="osStRtgCategory"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_executingDepartment">Executing Department</label>
+                    <input type="text" class="form-control" name="executingDepartment" id="field_executingDepartment"
+                           formControlName="executingDepartment"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_createdOn">Created On</label>
+                    <div class="d-flex">
+                        <input id="field_createdOn" type="datetime-local" class="form-control" name="createdOn" formControlName="createdOn" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
